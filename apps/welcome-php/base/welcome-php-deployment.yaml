@@ -21,4 +21,10 @@ spec:
       containers:
       - image: quay.io/redhatworkshops/welcome-php:latest
         name: welcome-php
+        env:
+          - name: SECRET_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: mysecret
+                key: username
         resources: {}
